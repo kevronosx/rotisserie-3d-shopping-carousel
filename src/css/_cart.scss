@@ -1,0 +1,89 @@
+$transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.cart {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce-in 990ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: $middle-layer;
+}
+
+.cart-list {
+  position: relative;
+  padding: 10px;
+}
+
+.cart-items {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.cart-items img {
+  width: 100px;
+  border: 1px solid #666;
+}
+
+
+/************* PANEL ***************/
+
+.cart-panel-trigger {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.cart-panel-trigger svg {
+  position: absolute;
+  top: 12px;
+  left: 22px;
+  fill: #999;
+}
+
+.cart-panel-trigger:hover svg,
+.cart-panel-trigger.open svg {
+  fill: red;
+  transition: $transition;
+}
+
+.cart-panel {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+  box-shadow: $base-box-shadow;
+  background: $light;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+  transform-origin: top center;
+  transform: scale(0);
+  transition: $transition;
+}
+
+.cart-panel.is-visible {
+  visibility: visible;
+  transition: $transition;
+  transform: scale(1);
+}
+
+.cart-panel li {
+  padding: 1.3em;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.cart-panel li img {
+  height: 100px;
+  margin-right: 10px;
+}
