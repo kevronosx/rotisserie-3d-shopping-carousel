@@ -10,7 +10,7 @@
     "imagemin": "imagemin ./src/images dist/images -p",
     "icons": "svgo -f ./src/images/icons && mkdir -p dist/images && svg-sprite-generate -d ./src/images/icons -o dist/images/icons.svg",
     "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html'",
-    "compile": "babel -d ./compiled/ ./src/js/",
+    "compile": "babel --compact -d ./compiled/ ./src/js/",
     "browserify": "browserify ./compiled/app.js -o ./compiled/bundle.js -t [babelify --presets [ es2015 ] ]",
     "lint": "eslint ./compiled/bundle.js",
     "uglify": "mkdir -p dist/js && uglifyjs ./compiled/bundle.js -m -c -o dist/js/bundle.js",
