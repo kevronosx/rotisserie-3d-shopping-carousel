@@ -18,7 +18,7 @@ const transformProp = (function() {
   return 'transform';
 })();
 
-export default class Rack {
+export class Rack {
 
   constructor(element, options) {
     this.elem = element;
